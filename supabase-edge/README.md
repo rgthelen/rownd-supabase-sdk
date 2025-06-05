@@ -7,7 +7,7 @@ Simplified Rownd authentication for Supabase Edge Functions.
 Since Supabase Edge Functions use Deno, you'll import this directly from a URL:
 
 ```typescript
-import { createRowndHandler } from 'https://esm.sh/@rownd/supabase-edge@1.0.0/simplified'
+import { createRowndHandler } from 'https://raw.githubusercontent.com/rgthelen/rownd-supabase-sdk/main/supabase-edge/mod.ts'
 ```
 
 ## Usage
@@ -17,7 +17,7 @@ import { createRowndHandler } from 'https://esm.sh/@rownd/supabase-edge@1.0.0/si
 ```typescript
 // @ts-nocheck
 import "jsr:@supabase/functions-js/edge-runtime.d.ts"
-import { createRowndHandler } from 'https://esm.sh/@rownd/supabase-edge@1.0.0/simplified'
+import { createRowndHandler } from 'https://raw.githubusercontent.com/rgthelen/rownd-supabase-sdk/main/supabase-edge/mod.ts'
 
 createRowndHandler(async (req, { userId, supabase }) => {
   // userId is automatically extracted from the Rownd token
@@ -38,6 +38,8 @@ createRowndHandler(async (req, { userId, supabase }) => {
 ### With Request Body
 
 ```typescript
+import { createRowndHandler } from 'https://raw.githubusercontent.com/rgthelen/rownd-supabase-sdk/main/supabase-edge/mod.ts'
+
 createRowndHandler(async (req, { userId, supabase }) => {
   const { task } = await req.json()
   
@@ -60,6 +62,8 @@ createRowndHandler(async (req, { userId, supabase }) => {
 ### With Custom CORS
 
 ```typescript
+import { createRowndHandler } from 'https://raw.githubusercontent.com/rgthelen/rownd-supabase-sdk/main/supabase-edge/mod.ts'
+
 createRowndHandler(async (req, { userId, supabase, token }) => {
   // Access full token payload if needed
   console.log('User email:', token.email)
@@ -102,7 +106,7 @@ Your handler receives a context object with:
 If you need more control, you can use the validation function directly:
 
 ```typescript
-import { validateRowndToken } from 'https://esm.sh/@rownd/supabase-edge@1.0.0/simplified'
+import { validateRowndToken } from 'https://raw.githubusercontent.com/rgthelen/rownd-supabase-sdk/main/supabase-edge/mod.ts'
 
 Deno.serve(async (req) => {
   try {

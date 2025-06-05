@@ -4,11 +4,38 @@ Seamless integration between Rownd authentication and Supabase Edge Functions.
 
 ## Installation
 
+### For Testing (Direct from GitHub)
+
+```bash
+# Clone the repository
+git clone https://github.com/rgthelen/rownd-supabase-sdk.git
+
+# Or use as a git submodule
+git submodule add https://github.com/rgthelen/rownd-supabase-sdk.git
+
+# Or import directly in your code (see usage below)
+```
+
+### For Production (NPM)
+
 ```bash
 npm install @rownd/supabase-js @supabase/supabase-js
 ```
 
 ## Usage
+
+### Direct GitHub Import (ES Modules)
+
+```typescript
+// Import directly from GitHub (for modern bundlers that support URL imports)
+import { createRowndSupabaseClient } from 'https://raw.githubusercontent.com/rgthelen/rownd-supabase-sdk/main/supabase-js/index.ts';
+import { useRownd } from '@rownd/react';
+
+// Or if you've cloned/submoduled the repo
+import { createRowndSupabaseClient } from './rownd-supabase-sdk/supabase-js/index.ts';
+```
+
+### Standard Usage
 
 ```typescript
 import { createRowndSupabaseClient } from '@rownd/supabase-js';
