@@ -1,0 +1,64 @@
+{
+  "name": "@rownd/supabase-js",
+  "version": "1.0.0",
+  "description": "Drop-in replacement for @supabase/supabase-js with automatic Rownd authentication",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "rownd-supabase": "./dist/cli.js"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./proxy": {
+      "import": "./dist/proxy.mjs",
+      "require": "./dist/proxy.js",
+      "types": "./dist/proxy.d.ts"
+    },
+    "./ai": {
+      "import": "./dist/ai-platforms.mjs",
+      "require": "./dist/ai-platforms.js",
+      "types": "./dist/ai-platforms.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsup src/index.ts src/cli.ts src/proxy.ts src/ai-platforms.ts --format cjs,esm --dts --clean",
+    "dev": "tsup src/index.ts src/cli.ts src/proxy.ts src/ai-platforms.ts --format cjs,esm --dts --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "rownd",
+    "supabase",
+    "authentication",
+    "auth",
+    "jwt",
+    "edge-functions",
+    "lovable",
+    "ai-platforms"
+  ],
+  "author": "Rownd",
+  "license": "MIT",
+  "peerDependencies": {
+    "@supabase/supabase-js": "^2.0.0"
+  },
+  "dependencies": {
+    "commander": "^11.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsup": "^7.0.0",
+    "typescript": "^5.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rownd/supabase-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rownd/supabase-js/issues"
+  },
+  "homepage": "https://github.com/rownd/supabase-js#readme"
+} 
